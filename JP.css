@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+#PartieGauche {
+    width: 60%;
+    height: 100%;
+    background-color: forestgreen;
+    float: left;
+}
+
+#PartieDroite {
+    width: 40%;
+    height: 100%;
+    float: right;
+    background-color: #E0D42B;
+}
+
+img {
+    position: absolute;
+    top: 110px;
+    left: 35px;
+    width: 30px;
+    height: 30px;
+}
+
+#PoubelleJaune {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 200px;
+    background-color: #E0D42B;
+}
+
+#PoubelleBleue {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    background-color: #16193D;
+    left: 50px;
+    top: 350px;
+}
+
+#PoubelleVerte {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    background-color: #0B2E13;
+    float: right;
+    bottom: 150px;
+    right: 50px;
+}
+
+#PoubelleMarron {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    background-color: #69471E;
+    float: right;
+    top: 150px;
+    right: 50px;
+}
+
+#Dechets {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    left: 350px;
+    top: 150px;
+    border: white solid;
+    border-radius: 50px;
+}
+
+h1, h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    margin: 2%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+#Bas {
+    height: 62.5%;
+    background-color: #0B2E13;
+    color: white;
+}
+
+#Res {
+    position: relative;
+    top: 2%;
+}
+
+#BP {
+    margin-top: 2%;
+    float: left;
+    text-align: center;
+    margin-left: 20%;
+}
+
+#MP {
+    margin-top: 2%;
+    float: right;
+    text-align: center;
+    margin-right: 20%;
+}
+
+#DechetsAlea {
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+    top: 80px;
+}
+
+button {
+    position: absolute;
+}
+
+#Jaune {
+    background-color: #E0D42B;
+    top: 30px;
+    left: 8px;
+}
+
+#Verte {
+    background-color: #0B2E13;
+    top: 30px;
+    left: 8px;
+    color: white;
+}
+
+#Bleue {
+    background-color: #16193D;
+    top: 30px;
+    left: 8px;
+    color: white;
+}
+
+#Marron {
+    background-color: #69471E;
+    top: 30px;
+    left: 8px;
+}
+
+#Img {
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    margin-left: 40px;
+    position: relative;
+}
+
+#PropositonJ {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+}
+
+#PropositonB {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+    color: white;
+}
+
+#PropositonM {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+}
+
+#PropositonV {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+    color: white;
+}
+
+#RPM {
+    float: right;
+    text-align: center;
+    margin-right: 20%;
+    font-size: 17px;
+}
+
+#RPB {
+    float: left;
+    text-align: center;
+    margin-left: 20%;
+    font-size: 17px;
+}
