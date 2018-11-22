@@ -19,6 +19,10 @@ let vrai = 0;
 
 let faux = 0;
 
+let essaie = 0;
+
+// document.getElementById("Bas").style.display = "none";
+
 function Reset() {
 
     Demarrer();
@@ -85,6 +89,7 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
+           // essaie++;
 
         }
 
@@ -93,6 +98,7 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
+            // essaie++;
 
         }
 
@@ -101,13 +107,14 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
+            // essaie++;
 
         }
 
         Demarrer();
 
         Reset();
-
+        //console.log(essaie);
     });
 
 document.getElementById("Verte").addEventListener("click",
@@ -127,6 +134,7 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
+            //essaie++;
 
         }
 
@@ -135,6 +143,7 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
+            //essaie++;
 
         }
 
@@ -143,13 +152,14 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
+            // essaie++;
 
         }
 
         Demarrer();
 
         Reset();
-
+        // console.log(essaie);
     });
 
 document.getElementById("Bleue").addEventListener("click",
@@ -169,6 +179,7 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
+            //essaie++;
 
         }
 
@@ -177,6 +188,7 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
+            //essaie++;
 
         }
 
@@ -185,13 +197,14 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
+            // essaie++;
 
         }
 
         Demarrer();
 
         Reset();
-
+        // console.log(essaie);
     });
 
 document.getElementById("Marron").addEventListener("click",
@@ -211,6 +224,7 @@ document.getElementById("Marron").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
             console.log(faux);
+            // essaie++;
 
         }
 
@@ -219,6 +233,7 @@ document.getElementById("Marron").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
             console.log(faux);
+            //essaie++;
 
         }
 
@@ -227,15 +242,23 @@ document.getElementById("Marron").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
             console.log(faux);
+            essaie++;
 
         }
 
         Demarrer();
 
         Reset();
-
+        //console.log(essaie);
     });
 
+/*
+if (essaie >= 10) {
+
+    document.getElementById("Bas").style.display = "block";
+    alert("bip");
+
+}*/
 
 
 
