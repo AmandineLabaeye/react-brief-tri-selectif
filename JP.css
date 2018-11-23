@@ -97,7 +97,15 @@ p {
 
 #Res {
     position: relative;
-    top: 2%;
+    top: 1%;
+}
+
+#Rejouer {
+    position: relative;
+    top: 1%;
+    left: 3%;
+    background-color: #0B2E13;
+    color: white;
 }
 
 #BP {

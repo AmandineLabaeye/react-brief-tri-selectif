@@ -21,11 +21,20 @@ let faux = 0;
 
 let essaie = 0;
 
-// document.getElementById("Bas").style.display = "none";
+document.getElementById("Bas").style.display = "none";
 
 function Reset() {
 
     Demarrer();
+    document.getElementById("Jaune").style.display = "block";
+    document.getElementById("Verte").style.display = "block";
+    document.getElementById("Bleue").style.display = "block";
+    document.getElementById("Marron").style.display = "block";
+    document.getElementById("Bas").style.display = "none";
+    essaie = 0;
+    document.getElementById("RPB").innerHTML = "";
+    document.getElementById("RPM").innerHTML = "";
+    document.getElementById("DechetsAlea").style.display = "block";
 
 }
 
@@ -67,7 +76,16 @@ function Demarrer() {
     if (DechetsAlea == 3) {
         document.getElementById("DechetsAlea").innerHTML = DechetsM;
     }
+    if (essaie >= 10) {
 
+        document.getElementById("Bas").style.display = "block";
+        document.getElementById("Jaune").style.display = "none";
+        document.getElementById("Verte").style.display = "none";
+        document.getElementById("Bleue").style.display = "none";
+        document.getElementById("Marron").style.display = "none";
+        document.getElementById("DechetsAlea").style.display = "none";
+
+    }
 }
 
 Demarrer();
@@ -81,6 +99,7 @@ document.getElementById("Jaune").addEventListener("click",
             vrai++;
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
+            essaie++;
 
         }
 
@@ -89,7 +108,7 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
-           // essaie++;
+            essaie++;
 
         }
 
@@ -98,7 +117,7 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
-            // essaie++;
+            essaie++;
 
         }
 
@@ -107,14 +126,12 @@ document.getElementById("Jaune").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
             console.log(faux);
-            // essaie++;
+            essaie++;
 
         }
 
         Demarrer();
-
-        Reset();
-        //console.log(essaie);
+        console.log(essaie);
     });
 
 document.getElementById("Verte").addEventListener("click",
@@ -126,6 +143,7 @@ document.getElementById("Verte").addEventListener("click",
             vrai++;
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
+            essaie++;
 
         }
 
@@ -134,7 +152,7 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
-            //essaie++;
+            essaie++;
 
         }
 
@@ -143,7 +161,7 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
-            //essaie++;
+            essaie++;
 
         }
 
@@ -152,14 +170,12 @@ document.getElementById("Verte").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
             console.log(faux);
-            // essaie++;
+            essaie++;
 
         }
 
         Demarrer();
-
-        Reset();
-        // console.log(essaie);
+        console.log(essaie);
     });
 
 document.getElementById("Bleue").addEventListener("click",
@@ -171,6 +187,7 @@ document.getElementById("Bleue").addEventListener("click",
             vrai++;
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
+            essaie++;
 
         }
 
@@ -179,7 +196,7 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
-            //essaie++;
+            essaie++;
 
         }
 
@@ -188,7 +205,7 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
-            //essaie++;
+            essaie++;
 
         }
 
@@ -197,14 +214,12 @@ document.getElementById("Bleue").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
             console.log(faux);
-            // essaie++;
+            essaie++;
 
         }
 
         Demarrer();
-
-        Reset();
-        // console.log(essaie);
+        console.log(essaie);
     });
 
 document.getElementById("Marron").addEventListener("click",
@@ -216,6 +231,7 @@ document.getElementById("Marron").addEventListener("click",
             vrai++;
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
+            essaie++;
 
         }
 
@@ -224,7 +240,7 @@ document.getElementById("Marron").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
             console.log(faux);
-            // essaie++;
+            essaie++;
 
         }
 
@@ -233,7 +249,7 @@ document.getElementById("Marron").addEventListener("click",
             faux++;
             document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
             console.log(faux);
-            //essaie++;
+            essaie++;
 
         }
 
@@ -247,18 +263,19 @@ document.getElementById("Marron").addEventListener("click",
         }
 
         Demarrer();
-
-        Reset();
-        //console.log(essaie);
+        console.log(essaie);
     });
 
-/*
-if (essaie >= 10) {
+document.getElementById("Rejouer").addEventListener("click",
 
-    document.getElementById("Bas").style.display = "block";
-    alert("bip");
+    function () {
 
-}*/
+        Reset();
+
+    });
+
+
+
 
 
 
