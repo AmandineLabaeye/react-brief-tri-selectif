@@ -1,3 +1,5 @@
+// Tableau pour tout ce qu'on peut mettre dans chaque poubelle
+
 let Poubelle_Jaune = [
     "Carton de meuble", "Bouteille en Plastique", "Désodorisant", "Boîte de conserve",
     "Canette de Coca", "Gel Douche", "Bouteille de Lait", "Tableau blanc"
@@ -15,14 +17,19 @@ let Poubelle_Marron = [
     "Pansements", "Textile", "Coton", "CD cassés"
 ];
 
+// Variable pour compter les bonnes réponse et mauvaise réponse
 let vrai = 0;
 
 let faux = 0;
 
+// Variable pour le nombre d'essaie
 let essaie = 0;
 
+// Cacher la partie Resultats au démarrage de l'écran du jeu
 document.getElementById("Bas").style.display = "none";
 
+
+// Fonction Reset qui permets de réinitialiser le jeu
 function Reset() {
 
     Demarrer();
@@ -32,12 +39,16 @@ function Reset() {
     document.getElementById("Marron").style.display = "block";
     document.getElementById("Bas").style.display = "none";
     essaie = 0;
+    faux = 0;
+    vrai = 0;
     document.getElementById("RPB").innerHTML = "";
     document.getElementById("RPM").innerHTML = "";
     document.getElementById("DechetsAlea").style.display = "block";
 
+
 }
 
+// Variable pour générer un mot aléatoire dans chaque tableau
 let DechetsJ = Poubelle_Jaune[Math.floor(Math.random() * Poubelle_Jaune.length)];
 
 let DechetsV = Poubelle_Verte[Math.floor(Math.random() * Poubelle_Verte.length)];
@@ -46,8 +57,11 @@ let DechetsB = Poubelle_Bleue[Math.floor(Math.random() * Poubelle_Bleue.length)]
 
 let DechetsM = Poubelle_Marron[Math.floor(Math.random() * Poubelle_Marron.length)];
 
+// Variable pour faire un random de 4 car il y a 4 tableaux
 let DechetsAlea = Math.floor(Math.random() * 4);
 
+
+// Fonction pour Demarre le jeu
 function Demarrer() {
 
     DechetsJ = Poubelle_Jaune[Math.floor(Math.random() * Poubelle_Jaune.length)];
@@ -76,6 +90,9 @@ function Demarrer() {
     if (DechetsAlea == 3) {
         document.getElementById("DechetsAlea").innerHTML = DechetsM;
     }
+
+    // If pour les essaies a dire essai ca efface les boutons et ca fait
+    // apparaitre la partie Resultats et ca efface le mot aléatoire
     if (essaie >= 10) {
 
         document.getElementById("Bas").style.display = "block";
@@ -88,7 +105,9 @@ function Demarrer() {
     }
 }
 
+// Rappelle de la fonction demarrer
 Demarrer();
+
 
 document.getElementById("Jaune").addEventListener("click",
 
@@ -97,6 +116,7 @@ document.getElementById("Jaune").addEventListener("click",
         if (DechetsAlea == 0) {
 
             vrai++;
+            document.getElementById("BR").innerHTML = "Tu as " + vrai + " bonne réponse";
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
             essaie++;
@@ -106,7 +126,8 @@ document.getElementById("Jaune").addEventListener("click",
         if (DechetsAlea == 1) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsV + " devait allez dans la <br> poubelle Verte";
             console.log(faux);
             essaie++;
 
@@ -115,7 +136,8 @@ document.getElementById("Jaune").addEventListener("click",
         if (DechetsAlea == 2) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsB + " devait allez dans la <br> poubelle Bleue";
             console.log(faux);
             essaie++;
 
@@ -124,7 +146,8 @@ document.getElementById("Jaune").addEventListener("click",
         if (DechetsAlea == 3) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsJ;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsM + " devait allez dans la <br> poubelle Marron";
             console.log(faux);
             essaie++;
 
@@ -141,6 +164,7 @@ document.getElementById("Verte").addEventListener("click",
         if (DechetsAlea == 1) {
 
             vrai++;
+            document.getElementById("BR").innerHTML = "Tu as " + vrai + " bonne réponse";
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
             essaie++;
@@ -150,7 +174,8 @@ document.getElementById("Verte").addEventListener("click",
         if (DechetsAlea == 2) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsB + " devait allez dans la <br> poubelle Bleue";
             console.log(faux);
             essaie++;
 
@@ -159,7 +184,8 @@ document.getElementById("Verte").addEventListener("click",
         if (DechetsAlea == 3) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsM + " devait allez dans la <br> poubelle Marron";
             console.log(faux);
             essaie++;
 
@@ -168,7 +194,8 @@ document.getElementById("Verte").addEventListener("click",
         if (DechetsAlea == 0) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsV;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsJ + " devait allez dans la <br> poubelle Jaune";
             console.log(faux);
             essaie++;
 
@@ -185,6 +212,7 @@ document.getElementById("Bleue").addEventListener("click",
         if (DechetsAlea == 2) {
 
             vrai++;
+            document.getElementById("BR").innerHTML = "Tu as " + vrai + " bonne réponse";
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
             essaie++;
@@ -194,7 +222,8 @@ document.getElementById("Bleue").addEventListener("click",
         if (DechetsAlea == 1) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsV + " devait allez dans la <br> poubelle Verte";
             console.log(faux);
             essaie++;
 
@@ -203,7 +232,8 @@ document.getElementById("Bleue").addEventListener("click",
         if (DechetsAlea == 0) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsJ + " devait allez dans la <br> poubelle Jaune";
             console.log(faux);
             essaie++;
 
@@ -212,7 +242,8 @@ document.getElementById("Bleue").addEventListener("click",
         if (DechetsAlea == 3) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsB;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsM + " devait allez dans la <br> poubelle Marron";
             console.log(faux);
             essaie++;
 
@@ -229,6 +260,7 @@ document.getElementById("Marron").addEventListener("click",
         if (DechetsAlea == 3) {
 
             vrai++;
+            document.getElementById("BR").innerHTML = "Tu as " + vrai + " bonne réponse";
             document.getElementById("RPB").innerHTML += "<br>" + "Bravo tu as trouvé <br> la bonne poubelle";
             console.log(vrai);
             essaie++;
@@ -238,7 +270,8 @@ document.getElementById("Marron").addEventListener("click",
         if (DechetsAlea == 1) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsV + " devait allez dans la <br> poubelle Verte";
             console.log(faux);
             essaie++;
 
@@ -247,7 +280,8 @@ document.getElementById("Marron").addEventListener("click",
         if (DechetsAlea == 2) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsB + " devait allez dans la <br> poubelle Bleue";
             console.log(faux);
             essaie++;
 
@@ -256,7 +290,8 @@ document.getElementById("Marron").addEventListener("click",
         if (DechetsAlea == 0) {
 
             faux++;
-            document.getElementById("RPM").innerHTML += "<br>" + "Faux, La réponse était <br> " + DechetsM;
+            document.getElementById("MR").innerHTML = "Tu as " + faux + " mauvaise réponse";
+            document.getElementById("RPM").innerHTML += "<br>" + "Faux, L'objet qui était <br> " + DechetsJ + " devait allez dans la <br> poubelle Jaune";
             console.log(faux);
             essaie++;
 
